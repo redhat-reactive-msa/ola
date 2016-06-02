@@ -37,6 +37,22 @@
       <artifactId>vertx-circuit-breaker</artifactId>
       <version>${vertx.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-service-discovery-bridge-kubernetes</artifactId>
+      <version>${vertx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.21</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -88,6 +104,7 @@
         <fabric8.service.ola.containerPort>8080</fabric8.service.ola.containerPort>
         <fabric8.service.ola.type>LoadBalancer</fabric8.service.ola.type>
         <fabric8.label.service-type>http-endpoint</fabric8.label.service-type>
+        <fabric8.label.vertx-cluster>true</fabric8.label.vertx-cluster>
         <docker.group.name>reactive-msa-demo</docker.group.name>
         <docker.image>${docker.group.name}/${project.artifactId}:${project.version}</docker.image>
         <fabric8.dockerUser>redhatmsa</fabric8.dockerUser>

@@ -1,4 +1,4 @@
-import io.vertx.ext.circuitbreaker.groovy.CircuitBreaker
+import io.vertx.groovy.circuitbreaker.CircuitBreaker
 
 def breaker = CircuitBreaker.create("ola", vertx,
         vertx.getOrCreateContext().config()["breaker"])
