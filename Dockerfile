@@ -10,4 +10,5 @@ RUN chmod 777 /app/
 
 WORKDIR /app/
 ENTRYPOINT ["sh", "-c"]
-CMD ["java -jar $JAVA_APP_JAR -cluster -conf config.json -cp ."]
+CMD ["java -Dvertx.zookeeper.hosts=${ZOOKEEPER_SERVICE_HOST} -jar $JAVA_APP_JAR -cluster -cp . -conf config.json"]
+
